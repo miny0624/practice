@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+<title></title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {margin: 0; font-size: 16px;}
+a {color:#666;}
+
+@media (max-width:599px) {
+  header .small {width: 100%; display: flex; align-items: center; justify-content: space-between;}
+  header #c a{padding: 15px; text-decoration: none; display:block;}
+  header #c a:hover {background-color: #eee; color:#666; text-decoration: none; display: block;}
+   .logo {width: 80px; line-height: 50px; background-color: #000; color:#fff; text-align: center;}
+   #a {display:none;}
+   #c {display: none;}
+   img {cursor: pointer;}
+}
+
+@media (min-width:600px) {
+  header .small{width: 100%; display: flex; align-items: center; justify-content:flex-start;}
+  header a{padding: 15px; text-decoration: none;}
+  header a:hover {background-color: #eee; color:#666;}
+   .logo {width: 80px; line-height: 50px; background-color: #000; color:#fff; text-align: center;}
+   #b,#c {display: none;}
+   #a {display:block;}
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
+
+<script>
+
+$(function(){
+ $("#b").click(function(){
+  $("#c").slideToggle();
+ });
+});
+
+
+$(window).resize(function(){
+   if(window.innerWidth<=599){
+      $('#c').hide();
+   }
+});
+
+</script>
+
+</head>
+<body>
+
+<header >
+
+  <div class="small">
+      <div class="logo">logo</div>
+      <div id="a">
+        <a href="#">Team</a>
+        <a href="#">Work</a>
+        <a href="#">Price</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <img src="img/i.png"  id="b">
+</div>
+
+
+<div id="c">
+  <a href="#">Team</a>
+  <a href="#">Work</a>
+  <a href="#">Price</a>
+  <a href="#">Contact</a>
+</div>
+
+</header>
+
+</body>
+
+</html>
